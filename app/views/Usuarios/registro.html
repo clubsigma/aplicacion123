@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'registro.html' /}
+
+<h1>Registro</h1>
+
+<a href="/usuarios">Volver</a>
+<br />
+
+
+<form action="@{Usuarios.guardar()}" method="post">
+	
+	<b>Nombre:</b><br />
+	<input type="text" required name="nombre" placeholder="Ingrese su nombre"  /><br />
+	
+	<b>Apellido:</b><br />
+	<input type="text" required name="apellido" placeholder="Ingrese su nombre"  /><br />
+	
+	<b>Password:</b><br />
+	<input type="password" required name="password" placeholder="Ingrese su password" /><br />
+	
+	<b>Email:</b><br />
+	<input type="email" required name="email" placeholder="Ingrese su email" /><br />
+	
+	<button type="submit" >Guardar</button>
+</form>

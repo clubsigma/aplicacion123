@@ -1,0 +1,42 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+<h1>Bienvenido a index</h1>
+
+<a href="/usuarios/registro">Nuevo</a>
+<br />
+
+
+#{if usuarios}
+
+
+	<table border="1">
+	
+		<tr>
+			
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Email</th>
+			<th>Opciones</th>
+	
+		</tr>
+		
+		
+		#{list items:usuarios, as:'usu'}
+		<tr>
+			<td>${usu.nombre}</td>
+			<td>${usu.apellido}</td>
+			<td>${usu.email}</td>	
+			<td><a href="@{Usuarios.eliminar(usu.id)}" onclick="return confirm('Esta seguro que desea eliminar?');">Eliminar</a></td>
+		
+		</tr>
+		#{/list}
+	
+	</table>
+	
+#{/if}
+
+#{else}
+	<h3>No hay usuarios registrados</h3>
+
+#{/else}
